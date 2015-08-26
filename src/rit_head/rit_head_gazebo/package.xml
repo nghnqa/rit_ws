@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>rit_head_gazebo</name>
+  <version>0.0.0</version>
+  <description>The rit_head_gazebo package</description>
+  <maintainer email="nguyenhongquan_eeit13@hotmail.com">Nguyen Hong Quan</maintainer>
+  <license>TODO</license>
+  <author email="nguyenhongquan_eeit13@hotmail.com">Nguyen Hong Quan</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>rit_head_description</run_depend>
+  <run_depend>rit_head_control</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <export></export>
+</package>
