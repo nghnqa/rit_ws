@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+  <name>rit_head_description</name>
+  <version>0.0.0</version>
+  <description>The rit_head_description package</description>
+  <maintainer email="nguyenhongquan_eeit13@hotmail.com">Nguyen Hong Quan</maintainer>
+  <license>BSD</license>
+  <author email="nguyenhongquan_eeit13@hotmail.com">Nguyen Hong Quan</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <export></export>
+</package>
