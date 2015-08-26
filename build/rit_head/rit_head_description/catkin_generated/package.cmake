@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "rit_head_description")
+set(rit_head_description_MAINTAINER "Nguyen Hong Quan <nguyenhongquan_eeit13@hotmail.com>")
+set(rit_head_description_DEPRECATED "")
+set(rit_head_description_VERSION "0.0.0")
+set(rit_head_description_BUILD_DEPENDS )
+set(rit_head_description_RUN_DEPENDS )
+set(rit_head_description_BUILDTOOL_DEPENDS "catkin")

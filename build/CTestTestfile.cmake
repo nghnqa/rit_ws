@@ -5,3 +5,5 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
+SUBDIRS(rit_head/rit_head_description)
+SUBDIRS(rit_head/rit_head_gazebo)

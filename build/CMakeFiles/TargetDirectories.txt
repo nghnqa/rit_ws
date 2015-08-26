@@ -1,3 +1,4 @@
+/home/nguyenhongquan_eeit13/rit_ws/build/rit_head/rit_head_description/CMakeFiles/_catkin_empty_exported_target.dir
 /home/nguyenhongquan_eeit13/rit_ws/build/CMakeFiles/clean_test_results.dir
 /home/nguyenhongquan_eeit13/rit_ws/build/CMakeFiles/download_extra_data.dir
 /home/nguyenhongquan_eeit13/rit_ws/build/CMakeFiles/doxygen.dir

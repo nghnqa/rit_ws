@@ -279,6 +279,18 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//Value Computed by CMake
+rit_head_description_BINARY_DIR:STATIC=/home/nguyenhongquan_eeit13/rit_ws/build/rit_head/rit_head_description
+
+//Value Computed by CMake
+rit_head_description_SOURCE_DIR:STATIC=/home/nguyenhongquan_eeit13/rit_ws/src/rit_head/rit_head_description
+
+//Value Computed by CMake
+rit_head_gazebo_BINARY_DIR:STATIC=/home/nguyenhongquan_eeit13/rit_ws/build/rit_head/rit_head_gazebo
+
+//Value Computed by CMake
+rit_head_gazebo_SOURCE_DIR:STATIC=/home/nguyenhongquan_eeit13/rit_ws/src/rit_head/rit_head_gazebo
+
 
 ########################
 # INTERNAL cache entries
@@ -381,7 +393,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=2
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

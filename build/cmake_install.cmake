@@ -117,6 +117,8 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/gtest/cmake_install.cmake")
+  INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/rit_head/rit_head_description/cmake_install.cmake")
+  INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/rit_head/rit_head_gazebo/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
