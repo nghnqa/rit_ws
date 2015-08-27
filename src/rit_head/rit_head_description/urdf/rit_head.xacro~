@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!-- Revolute-Revolute Manipulator -->
+<robot name="head" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Constants for robot dimensions -->
+  <xacro:property name="PI" value="3.1415926535897931"/>
+  <xacro:property name="width" value="0.1" /> <!-- Square dimensions (widthxwidth) of beams -->
+  <xacro:property name="height1" value="2.0" /> <!-- Link base -->
+  <xacro:property name="height2" value="2" /> <!-- Link 2 -->
+  <xacro:property name="height3" value="2" /> <!-- Link 3 -->
+  <xacro:property name="disc_width" value="1.2" /> <!-- The diameter of disc -->
+  <xacro:property name="axel_offset" value="0.05" /> <!-- Space btw top of beam and the each joint -->
+  <xacro:property name="limit_lower" value="-1.57" /> <!-- Space btw top of beam and the each joint -->
+  <xacro:property name="limit_upper" value="1.57" /> <!-- Space btw top of beam and the each joint -->
+  <xacro:property name="limit_effort" value="30" /> <!-- Space btw top of beam and the each joint -->
+  <xacro:property name="limit_velocity" value="30" /> <!-- Space btw top of beam and the each joint -->
+  <xacro:property name="scale" value="0.4" />
+  <xacro:property name="y_offset" value="0.14" />
+  <xacro:property name="x_offset" value="0.10" />
+  <xacro:property name="z_offset" value="0.10" />
+  <xacro:property name="leftArm_offset" value="2.5" />
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find rit_head_description)/urdf/head_rit.gazebo" />
+  <!-- Import Rviz colors -->
+  <xacro:include filename="$(find rit_head_description)/urdf/materials.xacro" />
+
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
+  <link name="world"/>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base"/>
+  </joint>
+
+  <!-- Base Link -->
+  <link name="base">
+    <collision>
+      <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
+      <geometry>
+	<box size="${width} ${width} ${height1}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<mesh filename="package://rit_head_description/meshes/base.STL" scale="0.1 0.1 0.1"/>
+	<!--box size="${width} ${width} ${height1}"/-->
+      </geometry>
+      <material name="orange"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
+      <mass value="3.34251506"/>
+      <inertia
+	  ixx="0.01399962" ixy="0.0" ixz="0.0"
+	  iyy="0.00912518" iyz="-0.00120586"
+	  izz="0.01961029"/>
+    </inertial>
+  </link>
+
+  <joint name="base_disc" type="revolute">
+    <parent link="base"/>
+    <child link="disc"/>
+    <origin xyz="${x_offset} ${width/2} ${height1-disc_width/2}" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.7"/>
+    <limit effort="${limit_effort}" lower="${limit_lower}" upper="${limit_upper}" velocity="${limit_velocity}" />
+    <safety_controller k_velocity="100" k_position="15" soft_lower_limit="-1.9" soft_upper_limit="0.5" />
+  </joint>
+
+  <!-- Disc Link -->
+  <link name="disc">
+    <collision>
+      <origin xyz="0 ${disc_width/2} 0" rpy="0 0 0"/>
+      <geometry>
+	<cylinder lenght="0.1" radius="${disc_width}/2"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="${-disc_width/2} 0 ${-disc_width/2}" rpy="0 0 0"/>
+      <geometry>
+	<mesh filename="package://rit_head_description/meshes/disc.STL" scale="0.1 0.1 0.1"/>
+	<!--box size="${elbow_width} ${elbow_width} ${elbow_width}"/-->
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 ${disc_width/2} 0" rpy="0 0 0"/>
+      <mass value="0.31442453"/>
+      <inertia
+	  ixx="0.00029478" ixy="0.0" ixz="0.0"
+	  iyy="0.00029817" iyz="-0.00000012"
+	  izz="0.00055502"/>
+    </inertial>
+  </link>
+</robot>

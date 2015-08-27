@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<sdf version='1.5'>
+  <world name='RIT'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='plane'>
+        <collision name='plane_base'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='plane_base'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+      <magnetic_field>5.5645e-06 2.28758e-05 -4.23884e-05</magnetic_field>
+    </physics>
+    <scene>
+      <background>0.8 0.8 0.8 1</background>
+      <ambient>0.5 0.5 0.5 1</ambient>
+      <shadows>1</shadows>
+      <sky>
+        <time>15</time>
+        <sunrise>10</sunrise>
+        <sunset>20</sunset>
+        <clouds>
+          <speed>100</speed>
+          <ambient>1 1 1 1</ambient>
+        </clouds>
+      </sky>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='RIT_world'>
+      <sim_time>37 137000000</sim_time>
+      <real_time>37 289876913</real_time>
+      <wall_time>1433912736 41784689</wall_time>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>5 -5 2 0 0.275643 2.35619</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <!--<model name='RIT'>
+      <static>1</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name='base'>
+        <gravity>1</gravity>
+        <self_collide>1</self_collide>
+        <kinematic>1</kinematic>
+        <pose>0 0 0 0 0 0</pose>
+        <must_be_base_link>1</must_be_base_link>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <inertial>
+          <mass>3.34251506</mass>
+          <inertia>
+            <ixx>0.01399962</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00912518</iyy>
+            <iyz>-0.00120586</iyz>
+            <izz>0.01961029</izz>
+         </inertia>
+        </inertial>
+        <collision name='base'>
+          <pose>0 0 0 0 0 0</pose>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+          </surface>
+          <geometry>
+            <mesh>
+              <uri>/media/trannguyenphuongtrinh_eeit13/01D0512D26AB19B0/ROBOT/13-08-2015/STL/base.STL</uri>
+              <scale>0.01 0.01 0.01</scale>
+            </mesh>
+            <box>
+              <size>200 100 10</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='base'>
+          <pose>0 0 0 0 0 0</pose>
+          <material>
+            <script>Gazebo/White</script>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>/media/trannguyenphuongtrinh_eeit13/01D0512D26AB19B0/ROBOT/13-08-2015/STL/base.STL</uri>
+              <scale>0.01 0.01 0.01</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>-->
+  </world>
+</sdf>
