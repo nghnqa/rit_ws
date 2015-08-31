@@ -1,0 +1,8 @@
+prefix=/home/nguyenhongquan_eeit13/rit_ws/install
+
+Name: gazebo_tutorials
+Description: Description of gazebo_tutorials
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/nguyenhongquan_eeit13/rit_ws/install/lib 
+Requires: roscpp gazebo_ros

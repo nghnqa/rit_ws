@@ -1,2 +1,2 @@
-rit_head/rit_head_description:rit_head/rit_head_gazebo
+gazebo_ros_demos/custom_plugin_tutorial:gazebo_ros_demos/rrbot_control:gazebo_ros_demos/rrbot_description:gazebo_ros_demos/rrbot_gazebo:rit_head/rit_head_description:rit_head/rit_head_gazebo
 -DCATKIN_DEVEL_PREFIX=/home/nguyenhongquan_eeit13/rit_ws/devel -DCMAKE_INSTALL_PREFIX=/home/nguyenhongquan_eeit13/rit_ws/install -G Unix Makefiles

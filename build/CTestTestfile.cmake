@@ -7,3 +7,7 @@
 SUBDIRS(gtest)
 SUBDIRS(rit_head/rit_head_description)
 SUBDIRS(rit_head/rit_head_gazebo)
+SUBDIRS(gazebo_ros_demos/rrbot_control)
+SUBDIRS(gazebo_ros_demos/rrbot_description)
+SUBDIRS(gazebo_ros_demos/rrbot_gazebo)
+SUBDIRS(gazebo_ros_demos/custom_plugin_tutorial)

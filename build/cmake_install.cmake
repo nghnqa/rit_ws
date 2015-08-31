@@ -119,6 +119,10 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/gtest/cmake_install.cmake")
   INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/rit_head/rit_head_description/cmake_install.cmake")
   INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/rit_head/rit_head_gazebo/cmake_install.cmake")
+  INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/gazebo_ros_demos/rrbot_control/cmake_install.cmake")
+  INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/gazebo_ros_demos/rrbot_description/cmake_install.cmake")
+  INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/gazebo_ros_demos/rrbot_gazebo/cmake_install.cmake")
+  INCLUDE("/home/nguyenhongquan_eeit13/rit_ws/build/gazebo_ros_demos/custom_plugin_tutorial/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
